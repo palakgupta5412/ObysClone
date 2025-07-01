@@ -5,6 +5,7 @@ html,body{
     height: 100%;
     color: white;
     font-family: "Plain Light" ;
+    overflow-x: hidden;
 }
 
 #main{
@@ -19,6 +20,16 @@ html,body{
     background-color: #111;
 }
 
+#cursor{
+    width: 25px;
+    height: 25px;
+    position: fixed;
+    z-index: 9999;
+    border-radius: 50%;
+    background-color: white;
+    /* border: #fff 1px solid; */
+    transform: translate(-50%,-50%); /*to follow the center of movement*/
+}
 #loader{
     background-color: #0B0B0B ;
     position: fixed;
@@ -101,3 +112,53 @@ html,body{
         opacity: 0;
     }
 }
+
+.page1 #nav1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.3vw 4.3vw;
+
+}
+
+.page1 #nav2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+    font-size: 0.8vw;
+    font-weight: 100;
+}
+
+.hero{
+    text-align: left;
+    position: relative;
+    left: 50%;
+    width: 75%;
+    margin-left: 17%;
+    overflow: hidden;
+    transform: translateX(-50%);
+    height: fit-content;
+    position: relative;
+    z-index: 9999;
+}
+
+.hero h1 , .hero h2, .hero h3{
+    line-height: 7vw;
+    font-size: 7vw ;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin: 0;
+}
+
+#hero3{
+    display: flex;
+    align-items: center;  
+}
+
+#hero3 h2:hover{
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+    font-weight: 500;
+}
+
