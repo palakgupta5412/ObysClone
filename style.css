@@ -46,7 +46,6 @@ html,body{
     /* to align the time and "your word in same line */
     display: flex;
     align-items: center;
-    justify-content:;
     gap: 3vw ;
 }
 
