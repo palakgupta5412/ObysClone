@@ -86,4 +86,25 @@ Shery.makeMagnet("#nav2 h3" /* Element to target.*/, {
 });
 
 
+// var videoCursor = document.querySelector(".videoCursor");
 
+// var videoContainer = document.querySelector(".videoContainer");
+// var video = document.querySelector("#video");
+// var bgImg = document.querySelector(".videoContainer img");
+// videoContainer.addEventListener("mousemove",(details)=>{
+//     console.log(details);
+//     gsap.to(videoCursor , {
+//         left: details.x - 570,
+//         top: details.y - 300,
+//     })
+// })
+
+// videoContainer.addEventListener("click",()=>{
+//         if(video.paused){
+//             video.play();
+//             bgImg.Img.style.display = "none";
+//         }
+//         else{
+//             video.pause();
+//         }
+// })
