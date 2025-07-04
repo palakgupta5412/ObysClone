@@ -11,7 +11,7 @@ html,body{
 #main{
     position: relative;
     width: 100%;
-    background-color: #b94040;
+    background-color: #0B0B0B;
 }
 
 .page1, .page2, .page3 , .page5{
@@ -132,36 +132,55 @@ html,body{
 .hero{
     text-align: left;
     position: relative;
-    left: 50%;
-    width: 75%;
-    margin-left: 17%;
-    overflow: hidden;
-    transform: translateX(-50%);
+    width: 72%;
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+    overflow-y: hidden;
     height: fit-content;
-    position: relative;
+    padding-left: 22vw;
     z-index: 9999;
 }
 
-.hero h1 , .hero h2, .hero h3{
+
+.hero h1 ,  .hero h3{
     line-height: 7vw;
     font-size: 7vw ;
     text-transform: uppercase;
     font-weight: 900;
     margin: 0;
+    position: relative;
 }
 
 .hero h2{
+    font-size: 7vw;
+    text-transform: uppercase;
+    margin: 0%;
+    font-weight: 900;
+    position: relative;
+    left: 0;
+}
+#hero3{
+    display: flex;
+}
+
+#hero1::before{
+    content: "01" ;
+    position: absolute;
+    font-size: 3vw;
+    font-weight: 300;
+    font-family: "silk serif";
+    left: 14%;
+    top: 1%;
+}
+
+/* #hero3 h2{
     padding-bottom: 1vh;
     border-bottom: #fff 0.5vh solid;
     transition: all 0.3s ease-in-out;
-}
+} */
 
-#hero3{
-    display: flex;
-    align-items: center;  
-}
-
-#hero3 h2 :hover{
+#hero3 h2:hover{
     -webkit-text-stroke: 2px #fff;
     color: transparent;
     font-weight: 500;
@@ -214,14 +233,14 @@ html,body{
 .page3{
     min-height: 100vh;
     width: 100%;
-    background-color: #151515;
+    background-color: #111;
     position: relative;
 }
 
 .page4{
     min-height: 100vh;
     width: 100%;
-    background-color: #151515;
+    background-color: #111;
     position: relative;
     padding-top: 5vh ;
 }
@@ -238,6 +257,17 @@ html,body{
     font-size: 16vh ;
     text-transform: uppercase;
     font-weight: 800;
+    position: relative;
+}
+
+#heading::before{
+    content: "03" ;
+    position: absolute;
+    font-size: 3vw;
+    font-weight: 300;
+    font-family: "silk serif";
+    left: -15%;
+    top: 18%;
 }
 
 .page4Content .line{
@@ -346,8 +376,157 @@ html,body{
 }
 #work{
     margin: 0%;
-    font-size: 1vh;
+    font-size: 1.2vh;
     font-weight: 400;
     padding-bottom: 1vh;
-    margin-bottom: 1vh;
+    margin-bottom: 10vh;
+}
+
+#page5{
+    margin: 20vh 0vw;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #111;
+    position: relative;
+}
+
+.page5divs{
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0%;
+}
+
+.page5divs h1{
+    margin : -1.6vw;
+    font-size: 7.5vw;
+    -webkit-text-stroke: 1px #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: transparent;
+    display: inline-block;
+    margin-right: 2vh;
+}
+
+.page5divs h1 span{
+    font-family: "silk serif";
+    font-style: italic;
+    margin: 0%;
+}
+
+#left h1{
+    transform: translateX(0%);
+    animation: moveLeft ;
+    animation-duration: 20s ;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#right h1{
+    transform: translateX(-100%);
+    animation: moveRight ;
+    animation-duration: 20s ;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    /* animation-direction: reverse; */
+}
+
+@keyframes moveLeft {
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes moveRight {
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+.footer {
+    height: 85vh;
+    width: 100%;
+    position: relative;
+    padding-left: 28vw;
+    padding-top: 5vw;
+    padding-right: 2vw;
+    text-align: left;
+    background-color: #111;
+}
+
+.footer h1{
+    margin: 0%;
+    font-size: 7.5vw;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: relative;
+    font-family: "Plain Light";
+}
+
+.footer h1::before{
+    content: "04" ;
+    position: absolute;
+    font-size: 3vw;
+    font-weight: 300;
+    font-family: "silk serif";
+    left: -11%;
+    top: 18%;
+    color: #fff;
+}
+
+.footer .footer-divs{
+    display: flex;
+    gap: 12vw;     
+}
+
+.footer-divs .box{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    
+}
+
+.footer-divs .box h6{
+    margin: 0%;
+    font-size: 1.8vh;
+    margin-bottom: 3vh;
+}
+
+.footer-divs .box h5{
+    margin: 0%;
+    font-size: 3.6vh;
+    font-weight: 400;
+}
+
+.footer .lineWhite{
+    width: 90%;
+    height: 0.1vh;
+    background-color: #fff;
+    margin: 12vh 0vw;
+    margin-right: 10%;
+}   
+
+.page6{
+    height: 35vh;
+    margin: 0% ;
+    padding-left: 28vw;
+    background-color: #111;
+    width: 100%;
+}
+.page6 h4{
+    padding-top: 4vw;
+    font-weight: 300;
+    font-size: 1vw;
+}
+
+@keyframes footerAnimation {
+    100%{
+        color: transparent;
+        -webkit-text-stroke: 1px #fff;
+    }
 }

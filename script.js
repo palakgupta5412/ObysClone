@@ -2,7 +2,7 @@ var loadingAnimation = function(){
     
     var t1 = gsap.timeline();
 
-    t1.from("#loader .line h1" , {
+    t1.from("#loader .line h1 , .line h2" , {
         y:200,
         stagger:0.3,
         duration : 0.6 ,
@@ -108,3 +108,13 @@ Shery.makeMagnet("#nav2 h3" /* Element to target.*/, {
 //             video.pause();
 //         }
 // })
+
+ var footerHeading = document.querySelector(".footer h1");
+footerHeading.addEventListener("mouseover",()=>{
+  gsap.to(footerHeading , {
+    fontStyle : "italic",
+    fontFamily : "silk serif",
+    animationName:"footerAnimation",
+    stagger: 0.2,
+})  
+})
