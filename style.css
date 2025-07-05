@@ -11,7 +11,7 @@ html,body{
 #main{
     position: relative;
     width: 100%;
-    background-color: #0B0B0B;
+    background-color: #111;
 }
 
 .page1, .page2, .page3 , .page5{
@@ -235,6 +235,148 @@ html,body{
     width: 100%;
     background-color: #111;
     position: relative;
+    padding: 2vw;
+    margin-bottom: 80vw;
+}
+
+.page3 h1{
+    margin: 0;
+    font-size: 16vh ;
+    text-transform: uppercase;
+    font-weight: 800;
+    position: relative;
+    padding-left: 28vw;
+}
+
+.page3 .underline{
+    width: 90%;
+    height: 0.2vh;
+    background-color: #fff;
+    margin-top: 12vh ;
+    margin-bottom: 12vh;
+    margin-left: 28vw ;
+    padding-right: 2vw ;
+}
+
+.page3 h1::before{
+    content: "02" ;
+    position: absolute;
+    font-size: 3vw;
+    font-weight: 300;
+    font-family: "silk serif";
+    left: 17%;
+    top: 18%;
+}
+
+#imageContainer{
+    position: relative;
+    padding: 1vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.imageDiv{
+    height: 34vw;
+    width: 22vw ;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+    margin : 1vw;
+}
+
+.imageDiv img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.imageDiv:nth-child(2){
+    height: 40vw;
+    width: 32vw;
+}
+
+.page3 .circle1{
+    height: 23vw;
+    width: 23vw;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8vw;
+    position: relative;
+    margin-top: 24vw;
+}
+
+.page3 .circle1 svg{
+    height: 7vw;
+}
+
+.page3 .circle2 svg{
+    height: 7vw;
+    transform: rotate(-45deg);
+}
+
+.page3 .circle2{
+    height: 23vw;
+    width: 23vw;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.page3 .circle2 svg{
+    height: 7vw;
+}
+.page3 .circleText{
+    pointer-events: none; 
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: white;
+    color: #000;
+    transform: scale(0);
+    position: absolute;
+    inset: 0;
+    transition:transform .4s ease .4s,
+               opacity    .4s ease .4s;
+}
+
+.page3 .circleText p{
+    font-size: 0.95vw;
+    width: 60%;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0);
+    transition:transform .4s ease .4s ;
+    transition-delay: 0.4s;
+}
+
+.page3 .circle1:hover .circleText , .page3 .circle2:hover .circleText{
+    transform: scale(1);
+    opacity: 1;
+}
+
+.page3 .circleText p { 
+    transform:scale(.6); 
+    opacity:0;
+    transition:transform .4s ease .4s ;
+}
+
+.page3 .circle1:hover p,
+.page3 .circle2:hover p { 
+    transform:scale(1); 
+    opacity:1; 
 }
 
 .page4{
@@ -508,7 +650,7 @@ html,body{
     height: 0.1vh;
     background-color: #fff;
     margin: 12vh 0vw;
-    margin-right: 10%;
+    padding-right: 2vw;
 }   
 
 .page6{
@@ -524,9 +666,7 @@ html,body{
     font-size: 1vw;
 }
 
-@keyframes footerAnimation {
-    100%{
-        color: transparent;
-        -webkit-text-stroke: 1px #fff;
-    }
+._canvas_container{
+    z-index: 999999 !important;
+    pointer-events: none;
 }
