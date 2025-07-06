@@ -120,31 +120,68 @@ Shery.makeMagnet("#nav2 h3" /* Element to target.*/, {
 });
 
 
-// var videoCursor = document.querySelector(".videoCursor");
+function videoPlay(){
+    var video = document.querySelector("#video");
+    var videoContainer = document.querySelector(".videoContainer");
+    var videoCursor = document.querySelector(".videoCursor");
+    videoContainer.addEventListener("mouseenter",function(){
+        videoContainer.addEventListener("mousemove",function(details){
+            gsap.to("#cursor",{
+                opacity:0
+            })
+            gsap.to(".videoCursor" , {
+                left: details.x - 500,
+                top: details.y - 270,
+            })
+            console.log("mouse moved")
+        })
+        console.log("mouse entered")
+    })
 
-// var videoContainer = document.querySelector(".videoContainer");
-// var video = document.querySelector("#video");
-// var bgImg = document.querySelector(".videoContainer img");
-// videoContainer.addEventListener("mousemove",(details)=>{
-//     console.log(details);
-//     gsap.to(videoCursor , {
-//         left: details.x - 570,
-//         top: details.y - 300,
-//     })
-// })
+    console.log("First Listener")
 
-// videoContainer.addEventListener("click",()=>{
-//         if(video.paused){
-//             video.play();
-//             bgImg.Img.style.display = "none";
-//         }
-//         else{
-//             video.pause();
-//         }
-// })
+    videoContainer.addEventListener("mouseleave",function(){
+        gsap.to("#cursor",{
+            opacity:1
+        })
+        gsap.to(".videoCursor" , {
+            right : "20%" ,
+            top : "-10%"
+        })
+    })
+    console.log("Second Listener")
+    var flag = 0
+    console.log(videoContainer);
+    videoContainer.addEventListener("click", function() {
+        console.log("clicked")
+        if (flag == 0) {
+            console.log(video)
+          video.play()
+         .catch(err => console.warn("Couldn’t start video:", err));
+          video.style.opacity = 1
+        //   document.querySelector(".videoCursor").innerHTML = `<i class="ri-pause-mini-fill"></i>`
+        //   gsap.to(".videoCursor", {
+        //     scale: 0.5
+        //   })
+    console.log("Third Listener")
+          flag = 1
+        } else {
+        console.log("Third Listener")
+          video.pause()
+          video.style.opacity = 0
+        //   document.querySelector(".videoCursor").innerHTML = `<i class="ri-play-mini-fill"></i>`
+        //   gsap.to(".videoCursor", {
+        //     scale: 1
+        //   })
+          flag = 0
+        }
+    })
+}
+
+videoPlay();
 
 //Locomotive Scroll 
-const scroll = new LocomotiveScroll({
+const scroll = new locomotiveScroll({
     el: document.querySelector('#main'),
     smooth: true
 });
@@ -155,8 +192,6 @@ function sheryAnimation(){
         style: 5,
         gooey : true ,
         config : {"a":{"value":1.37,"range":[0,30]},"b":{"value":-0.91,"range":[-1,1]},"zindex":{"value":-9996999,"range":[-9999999,9999999]},"aspect":{"value":0.7272749932567818},"ignoreShapeAspect":{"value":true},"shapePosition":{"value":{"x":0,"y":0}},"shapeScale":{"value":{"x":0.5,"y":0.5}},"shapeEdgeSoftness":{"value":0,"range":[0,0.5]},"shapeRadius":{"value":0,"range":[0,2]},"currentScroll":{"value":0},"scrollLerp":{"value":0.07},"gooey":{"value":true},"infiniteGooey":{"value":false},"growSize":{"value":4,"range":[1,15]},"durationOut":{"value":1,"range":[0.1,5]},"durationIn":{"value":1.5,"range":[0.1,5]},"displaceAmount":{"value":0.5},"masker":{"value":true},"maskVal":{"value":1.37,"range":[1,5]},"scrollType":{"value":0},"geoVertex":{"range":[1,64],"value":1},"noEffectGooey":{"value":true},"onMouse":{"value":0},"noise_speed":{"value":0.2,"range":[0,10]},"metaball":{"value":0.49,"range":[0,2]},"discard_threshold":{"value":0.79,"range":[0,1]},"antialias_threshold":{"value":0.03,"range":[0,0.1]},"noise_height":{"value":0.5,"range":[0,2]},"noise_scale":{"value":15.27,"range":[0,100]}} ,
-        // config : {"a":{"value":1.83,"range":[0,30]},"b":{"value":-0.95,"range":[-1,1]},"zindex":{"value":-9996999,"range":[-9999999,9999999]},"aspect":{"value":0.7272749932567818},"ignoreShapeAspect":{"value":true},"shapePosition":{"value":{"x":0,"y":0}},"shapeScale":{"value":{"x":1.5,"y":1.5}},"shapeEdgeSoftness":{"value":0,"range":[0,0.5]},"shapeRadius":{"value":0,"range":[0,2]},"currentScroll":{"value":0},"scrollLerp":{"value":0.07},"gooey":{"value":true},"infiniteGooey":{"value":false},"growSize":{"value":4,"range":[1,15]},"durationOut":{"value":1,"range":[0.1,5]},"durationIn":{"value":1.5,"range":[0.1,5]},"displaceAmount":{"value":0.5},"masker":{"value":true},"maskVal":{"value":1.24,"range":[1,5]},"scrollType":{"value":0},"geoVertex":{"range":[1,64],"value":1},"noEffectGooey":{"value":true},"onMouse":{"value":0},"noise_speed":{"value":2.06,"range":[0,10]},"metaball":{"value":0.41,"range":[0,2]},"discard_threshold":{"value":0.85,"range":[0,1]},"antialias_threshold":{"value":0.03,"range":[0,0.1]},"noise_height":{"value":0.53,"range":[0,2]},"noise_scale":{"value":16.03,"range":[0,100]}},
-
     });
 }
 
