@@ -8,6 +8,14 @@ html,body{
     overflow-x: hidden;
 }
 
+@font-face{
+  font-family:"Silk Serif";
+  src:url("/fonts/SilkSerif-Regular.woff2") format("woff2");
+  font-weight:400;
+  font-style:italic;
+  font-display:swap;
+}
+
 #main{
     position: relative;
     width: 100%;
@@ -159,9 +167,13 @@ html,body{
     font-weight: 900;
     position: relative;
     left: 0;
+    padding-bottom: 1vh;
+    text-decoration: underline #fff 1vh;
+    /* border-bottom: #fff 0.5vh solid; */
 }
 #hero3{
     display: flex;
+    gap: 0.7vw;
 }
 
 #hero1::before{
@@ -174,17 +186,12 @@ html,body{
     top: 1%;
 }
 
-/* #hero3 h2{
-    padding-bottom: 1vh;
-    border-bottom: #fff 0.5vh solid;
-    transition: all 0.3s ease-in-out;
-} */
-
 #hero3 h2:hover{
-    -webkit-text-stroke: 2px #fff;
+    -webkit-text-stroke: 1px #fff;
     color: transparent;
     font-weight: 500;
-    border-bottom: #fff 3px solid;
+    text-decoration: none;
+    /* border: #fff 0 solid; */
 }
 
 .page2{
@@ -202,10 +209,10 @@ html,body{
 }
 
 .videoContainer video{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
+    width: 100% ;
+    height: 100% ;
+    object-fit: cover ;
+    opacity: 0 ;
 }
 
 .videoCursor{ 
@@ -626,6 +633,20 @@ html,body{
     color: #fff;
 }
 
+.footer #create {
+    display: flex;
+    gap: 5vw;
+    align-items: center ;
+}
+.footer #create svg{
+    width: 6vw;
+    height: 6vw;
+    display: flex;
+    gap: 5vw;
+    justify-content: center;
+    align-items: center;
+}
+
 .footer .footer-divs{
     display: flex;
     gap: 12vw;     
@@ -674,4 +695,26 @@ html,body{
 ._canvas_container{
     z-index: 999999 !important;
     pointer-events: none;
+}
+
+#flag{
+    height: 20vw;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+}
+
+#hero3{
+    position: relative;
+    z-index: 999;
+}
+
+.footer #create #two{
+    display: none;
+    -webkit-text-stroke: #fff 1px ;
+    color: transparent;
+    font-family: "silk serif";
+    font-style: italic;
 }

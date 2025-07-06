@@ -92,7 +92,7 @@ var loadingAnimation = function(){
         })
 
     //Page 1 ke main text ko load karna :
-    t1.from("#hero1 h1 , #hero2 h1 ,#hero3 h2 , #hero4 h1",{
+    t1.from("#hero1 h1 , #hero2 h1 ,#hero3 h2 , #hero3 h3 , #hero4 h1",{
         y:200,
         stagger:0.2,
     })
@@ -196,3 +196,54 @@ function sheryAnimation(){
 }
 
 sheryAnimation();
+
+document.addEventListener("mousemove" , function(details){
+    gsap.to("#flag" , {
+        x : details.x,
+        y : details.y 
+    })
+})
+
+document.querySelector("#hero3").addEventListener("mouseenter" , function(){
+    gsap.to("#flag" , {
+        opacity : 1
+    })
+})
+
+document.querySelector("#hero3").addEventListener("mouseleave" , function(){
+    gsap.to("#flag" , {
+        opacity : 0
+    })
+})
+
+
+document.querySelector("#create").addEventListener("mouseover" , function(){
+    console.log("hovered")
+    gsap.to("#create" , {
+        // onHover : function(){
+        //     $('#create #one').textillate({ in: { effect: 'fadeIn' } });
+        // } ,
+        // display : "none"
+        onHover : function(){
+            $('#one, #two').textillate({ in:{effect:'fadeIn'}, out:{effect:'fadeOut'} });
+            $('#two').textillate('stop').hide();   // keep second one silent & hidden
+
+            $('#create')
+                .on('mouseenter', function (){
+                      $('#one').textillate('out');
+                      $('#two').show().textillate('in');
+                })
+                .on('mouseleave', function (){
+                      $('#two').textillate('out');
+                      $('#one').show().textillate('in');
+                });
+        },
+        
+
+    })  
+    gsap.to("#create #two" , {
+        display : "block"  ,
+        color : transparent ,
+        fontFamily : "silk serif"
+    })
+})
